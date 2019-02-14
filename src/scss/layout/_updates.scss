@@ -1,0 +1,69 @@
+.updates{
+	@include colors(null, white);
+	.updates-content{
+		@extend %default-p;
+		@include colors(null, yellow);
+
+		.update{
+			.keep-update{
+				@extend %default-c;
+				@extend %block;
+				text-align: center;
+
+				@media #{$sm} {	
+					padding-top: 30px;
+					h3{ font-size: 35px; }
+				} 
+
+				@media #{$md} {
+					padding-left: 60px;
+					padding-right: 60px;
+					h3{ font-size: 45px; }
+				} 
+
+				@media #{$lg} {
+					padding-left: 90px;
+					padding-right: 90px;
+					h3{ font-size: 50px; }
+				}
+
+				@media #{$xlg} {
+					padding-left: 120px;
+					padding-right: 120px;
+				} 
+
+				h3{
+					@include colors(white);
+				}
+
+				span{
+					@include pb(20);
+				}
+
+				form{
+					text-align: left;
+
+					input{
+						box-shadow: none;
+						@include p(5px 10px);
+
+						@media #{$sm} { margin-bottom: 25px; } 
+
+						@media #{$md} { margin-bottom: 25px; }
+					}
+					input[type='text'], input[type='email']{
+						border: 2px solid map-get($color, white);
+					}
+					input[type='button']{
+						@include transition;
+						@include colors(white, dark1);
+						&:hover{
+							@include colors(dark1, white);
+						}
+					}
+				}
+			}
+		}
+	}
+
+}

@@ -1,0 +1,18 @@
+.top {
+	position: fixed;
+	bottom: 50px;
+	right: 65px;
+	width: 50px;
+	border-radius: 50%;
+	@include colors(white, dark1);
+	@include transition;
+	@include p(8px 2px 10px);
+	@include fontSize(22);
+	cursor: pointer;
+
+	@media #{$sm} { display: none !important; visibility: hidden !important; } 
+
+	&:hover{
+		@include colors(null, dark2);
+	}
+}

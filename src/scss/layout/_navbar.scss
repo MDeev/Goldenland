@@ -1,0 +1,89 @@
+.navbar{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 999;
+	@include font($light);
+	@include pt(20);
+	@include pb(20);
+	@include transition;
+
+	@media #{$sm} {
+		background-color: map-get($color, white);
+		.navbar-toggler{ margin-right: 15px; }
+		.nav-link{ color: map-get($color, dark2) !important; }
+	} 
+
+	@media #{$md} {
+		background-color: map-get($color, white);
+		 .nav-link{ color: map-get($color, dark2) !important; }
+	} 
+
+	@media #{$lg} {
+		background-color: transparent;
+		.nav-link{ color: map-get($color, white) !important; }
+	} 
+
+	&.nav-white{
+		background-color: map-get($color, white) !important;
+		padding-top: 7px !important;
+		padding-bottom: 10px !important;
+		@include shadow;
+		
+		.nav-link{
+			color: map-get($color, dark2) !important;
+			&:before{
+				background-color: map-get($color, dark2) !important;
+			}
+
+			&.active:before{
+				background-color: map-get($color, yellow) !important;
+			}
+		}
+	}
+
+	.navbar-toggler{ outline: none; }
+
+	.navbar-brand{
+		@include colors(yellow);
+		@include fontSize(24);
+	}
+
+	.nav-item{
+		@include mt(3);
+		.nav-link{
+			@include colors(white);
+			position: relative;
+			@include mr(5);
+
+			&:before{
+				content: '';
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 0;
+				height: 2px;
+				@include colors(null, white);
+				@include transition;
+
+				@media #{$sm} { background-color: map-get($color, dark2); } 
+
+				@media #{$md} { background-color: map-get($color, dark2); } 
+
+				@media #{$lg} { background-color: map-get($color, white); } 
+			}
+
+			&:hover:before{
+				width: 100%;
+			}
+
+			&.active{
+				color: map-get($color, yellow) !important;
+				@include font;
+			}
+
+			&.active:before{ @include colors(null, yellow); width: 100%; }
+		}
+	}
+}

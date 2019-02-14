@@ -1,0 +1,40 @@
+
+// ----------------- # Normalize # ----------------------- //
+@import '_normalize';
+// ----------------- # Variables # ----------------------- //
+@import 'variables/_variables';
+// ---------------- # Media Query # ---------------------- //
+@import 'media/_meadia-queries';
+// ------------------ # Helpers # ------------------------ //
+@import 'helpers/_helpers';
+// ------------------ # Mixins # ------------------------ //
+@import 'mixins/_mixins';
+
+
+// ------------------ # Layout # ------------------------ //
+body{
+
+	@include font;
+	@include colors(dark, white);
+	@media #{$sm} { @include pr(15); } 
+
+	@import 'layout/_header';
+	@import 'layout/_default';
+	@import 'layout/_about-us';
+	@import 'layout/_presentation';
+	@import 'layout/_our-team';
+	@import 'layout/_parallax';
+	@import 'layout/_principles';
+	@import 'layout/_portfolio';
+	@import 'layout/_achievements';
+	@import 'layout/_updates';
+	@import 'layout/_footer';
+	@import 'layout/_loader';
+	@import 'layout/_scroll-top';
+
+	@import 'layout/_404';
+
+}
+
+
+// ------------------------------------------------------ //

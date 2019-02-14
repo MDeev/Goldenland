@@ -1,0 +1,105 @@
+.achievements{
+	@include colors(null, yellow);
+	.achievements-content{
+		@extend %default-p;
+		@extend %skew-lb;
+		@include colors(null, white);
+
+		.achievement{
+			@extend %default-c;
+			
+			@media #{$sm} {	
+				padding-bottom: 30px;
+				h3{ font-size: 35px; }
+			} 
+
+			@media #{$md} {
+				padding-bottom: 30px;
+				h3{ font-size: 45px; }
+			} 
+
+			@media #{$lg} {
+				padding-bottom: 0;
+				h3{ font-size: 50px; }
+			} 
+
+			h3{
+				@include colors(dark2);
+			}
+			& > span{
+				@include colors(yellow);
+			}
+
+			.col-lg-3:nth-child(odd) .achieve{
+				@include colors(dark1, yellow);
+			}
+
+			.col-lg-3:nth-child(even) .achieve{
+				@include colors(yellow, dark1);
+			}
+
+			.col-lg-3 .achieve:hover{ 
+				@include colors(gray3, gray1); 
+				border: 1px solid;
+				border-color: map-get($color, gray2);
+			}
+
+			.achieve{
+				@extend %block;
+				overflow: hidden;
+				@include p(10px);
+				border-radius: 50px 50px 5px 5px;
+				@include transition;
+				@include shadow;
+				cursor: pointer;
+				border: 1px solid transparent;
+
+				span{
+					@include mb(0);
+					@extend %block;
+				}
+				.icon{
+					@include font($bold);
+					@include m(0 auto);
+					i{
+						@extend %block;
+						width: 100%;
+						@include mt(20);
+						@include mb(0);
+   						border-radius: 50%;
+					}
+				}
+				.number{
+					@include font($bold);
+				}
+				.name{
+					@include fontSize(14);
+					@include mb(20);
+				}
+
+				@media #{$sm} {
+					margin: 0 30px 30px;
+					.icon{ font-size: 150px; }
+					.number{ font-size: 90px; }
+				} 
+
+				@media #{$md} {
+					margin: 0 30px 30px;
+					.icon{ font-size: 150px; }
+					.number{ font-size: 90px; }
+				} 
+
+				@media #{$lg} {
+					margin: 0;
+					.icon{ font-size: 120px; }
+					.number{ font-size: 70px; }
+				} 
+
+				@media #{$xlg} {
+					.number{ font-size: 90px; }
+				} 
+			}
+		}
+
+	}
+}

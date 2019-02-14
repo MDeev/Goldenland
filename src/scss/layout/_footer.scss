@@ -1,0 +1,61 @@
+.footer{
+	@include font($light);
+	@include colors(white, dark2);
+	.copyrights{
+		@include fontSize(14);
+		@include pt(5);
+		a{
+			@include colors(yellow);
+		    @include transition;
+		    text-decoration: none;
+		    &:hover{
+		    	@include colors(gray2);
+		    }
+		}
+	}
+	.social{
+		a{
+			border: 2px solid map-get($color, white);
+			@include p(12px 23px);
+			@include m(0 5px);
+		    border-radius: 50%;
+		    position: relative;
+		    @include transition;
+		    @include colors(white);
+
+		    &:hover{
+		    	@include colors(yellow);
+		    	border-color: map-get($color, yellow);
+		    }
+
+			i{
+				position: absolute;
+			    top: 50%;
+			    left: 50%;
+			    transform: translate(-50%, -50%);
+			    @include fontSize(24);
+			}
+		}
+	}
+
+	@media #{$sm} {
+		padding-top: 30px;
+		padding-bottom: 30px;
+		text-align: center;
+		.copyrights{ margin-bottom: 40px; }
+	} 
+
+	@media #{$md} {
+		padding-top: 40px;
+		padding-bottom: 40px;
+		text-align: center;
+		.copyrights{ margin-bottom: 40px; }
+	} 
+
+	@media #{$lg} {
+		padding-top: 60px;
+		padding-bottom: 55px;
+		.copyrights{ margin-bottom: 0; text-align: left; }
+		.social{ text-align: right; }
+	} 
+}

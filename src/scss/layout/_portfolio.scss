@@ -1,0 +1,54 @@
+.portfolio{
+	@include colors(null, white);
+
+	.portfolio-content{
+			@extend %default-p;
+			@extend %skew-lb;
+			@include colors(null, yellow);
+
+		.items{
+			@extend %default-c;
+			text-align: center;
+
+			@media #{$sm} {
+				h3{ font-size: 35px; }
+			} 
+
+			@media #{$md} {
+				h3{ font-size: 45px; }
+			} 
+
+			@media #{$lg} {
+				margin-bottom: 30px;
+				h3{ font-size: 50px; }
+			} 
+
+			@media #{$xlg} {
+				h3{ font-size: 55px; }
+			} 
+
+			h3{
+				@include colors(white);
+			}
+			span{
+				@include pb(20);
+			}
+
+			.item{
+				overflow: hidden;
+				border-radius: 3px;
+				@include transition;
+
+				img{
+					@include mb(25);
+					cursor: pointer;
+
+					&:hover{
+						@include shadow;
+						opacity: .8;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,82 @@
+.our-team{
+	@include colors(null, yellow);
+	.team-content{
+		@extend %default-p;
+		@include colors(null, white);
+
+		.teams{
+			@extend %default-c;
+			text-align: center;
+
+			@media #{$sm} { padding-right: 20px; padding-left: 20px; } 
+
+			@media #{$md} { padding-right: 40px; padding-left: 40px; } 
+
+			@media #{$xlg} { padding-right: 100px; padding-left: 100px; } 
+
+			h3{
+				@include colors(dark2);
+			}
+			& > span{
+				@include colors(yellow);
+			}
+
+			.team{
+				@include colors(null, gray1);
+				@include p(10px 20px);
+				border-radius: 5px;
+				overflow: hidden;
+				border: 1px solid;
+				border-color: map-get($color, gray2);
+				@include shadow(2px, 2px, 6px, #333, .06) ;
+				transition: background-color .3s ease-in-out;
+				cursor: pointer;
+
+				&:hover{
+					@include colors(null, yellow);
+					border-color: transparent;
+					@include shadow(2px, 2px, 6px, #333, .16) ;
+					transform: scale(1.05);
+					h4{ @include colors(white); }
+					span{ @include colors(dark1); }
+				}
+				img{
+					border-radius: 50%;
+					@include mb(20);
+				}
+				h4{
+					@include mb(20);
+					@include font($bold);
+					text-transform: uppercase;
+					@include transition;
+				}
+				span{
+					@extend %block;
+					@include colors(yellow);
+					@include mb(10);
+					filter: brightness(.85);
+					@include transition;
+				}
+
+				@media #{$sm} {
+					margin-bottom: 25px;
+					h4{ font-size: 18px; }
+				} 
+
+				@media #{$md} {
+					margin-bottom: 25px;
+					h4{ font-size: 16px; }
+				} 
+
+				@media #{$lg} {
+					h4{ font-size: 16px; }
+				} 
+
+				@media #{$xlg} {
+					h4{ font-size: 18px; }
+				} 
+			}
+		}
+
+	}
+}

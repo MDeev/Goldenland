@@ -1,0 +1,82 @@
+%default-p{
+	overflow: hidden;
+
+	@media #{$sm} { padding-top: 30px; padding-bottom: 100px; } 
+
+	@media #{$md} { padding-top: 30px; padding-bottom: 100px; } 
+
+	@media #{$lg} { padding-top: 60px; padding-bottom: 50px; } 
+
+	@media #{$xlg} { padding-top: 60px; padding-bottom: 100px; } 
+}
+
+@media #{$sm} {
+	%skew-1{ clip-path: polygon(0% 0%, 100% 3%, 100% 97%, 0% 100%); } // skew >
+	%skew-lb{ clip-path: polygon(0% 0%, 100% -1%, 100% 100%, 0% 99%); } // skew left to bottom
+	%skew-lt{ clip-path: polygon(0% 0%, 100% -3%, 100% 97%, 0% 100%); } // skew left to bottom
+} 
+
+@media #{$md} {
+	%skew-1{ clip-path: polygon(0% 0%, 100% 5%, 100% 95%, 0% 100%); }
+	%skew-lb{ clip-path: polygon(0% 0%, 100% -3%, 100% 100%, 0% 97%); }
+	%skew-lt{ clip-path: polygon(0% 0%, 100% -5%, 100% 95%, 0% 100%); }
+} 
+
+@media #{$lg} {
+	%skew-1{ clip-path: polygon(0% 0%, 100% 10%, 100% 90%, 0% 100%); }
+	%skew-lb{ clip-path: polygon(0% 0%, 100% -5%, 100% 100%, 0% 95%); }
+	%skew-lt{ clip-path: polygon(0% 0%, 100% -10%, 100% 90%, 0% 100%); }
+} 
+
+%default-c{
+	@media #{$sm} { text-align: center; } 
+
+	@media #{$md} { text-align: center; } 
+
+	@media #{$lg} { text-align: left; } 
+
+	& > h3{
+		@include fontSize(55);
+		@include font($bold);
+		@include mt(20);
+		@include mb(20);
+		text-transform: uppercase;
+	}
+	& > span {
+		display: block;
+		@include fontSize(18);
+		@include mb(30);
+	}
+	& > p{
+		@include mb(20);
+		@include fontSize;
+	}
+	& > a.btn{
+		@include fontSize;
+		@include mb(20);
+		border-radius: 5px;
+		position: relative;
+		overflow: hidden;
+		border: 2px solid map-get($color, yellow);
+		@include colors(yellow);
+
+		&:after{
+			content: 'Find out more';
+			position: absolute;
+			top: 0;
+			width: 0;
+			left: -100%;
+			height: 100%;
+			line-height: 2.4;
+			@include transition;
+			@include colors(dark1, yellow);
+		}
+
+		&:hover:after{
+			width: 100%;
+			left: 0;
+		}
+	}
+}
+
+

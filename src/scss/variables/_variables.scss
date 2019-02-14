@@ -1,0 +1,34 @@
+
+// Importing fonts
+$light: 'OpenSans-Light';
+$normal: 'OpenSans-Regular';
+$bold: 'OpenSans-Bold';
+
+@font-face {
+	font-family: 'OpenSans-Light';
+	src: url('../fonts/OpenSans-Light.ttf');
+}
+
+@font-face {
+	font-family: 'OpenSans-Bold';
+	src: url('../fonts/OpenSans-Bold.ttf');
+}
+
+@font-face {
+	font-family: 'OpenSans-Regular';
+	src: url('../fonts/OpenSans-Regular.ttf');
+}
+
+
+// Color
+$color: (
+	yellow: #f8cd47,
+	black: #232323,
+	dark1: #222,
+	dark2: #333,
+	dark3: 	rgba(0, 0, 0, .5),
+	white: #FFF,
+	gray1: #F1F1F1,
+	gray2: #e5e5e5,
+	gray3: #ccc
+);

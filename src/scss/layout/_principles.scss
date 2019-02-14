@@ -1,0 +1,60 @@
+.principles{
+		@include colors(null, yellow);
+
+	.principles-content{
+		@extend %default-p;
+		@extend %skew-lt;
+		@include colors(null, white);
+
+		@media #{$sm} {	
+			padding-top: 40px;
+			padding-bottom: 40px;
+		} 
+
+		@media #{$md} {
+			padding-top: 40px;
+			padding-bottom: 40px;
+		} 
+
+		@media #{$lg} {
+			padding-bottom: 70px;
+		} 
+		
+		img{
+			border-radius: 5px;
+			@include shadow;
+		}
+
+		.principle{
+			@extend %default-c;
+			@include pl(10);
+
+			@media #{$sm} {	
+				margin-bottom: 30px;
+				h3{ font-size: 35px; }
+			} 
+
+			@media #{$md} {
+				margin-bottom: 30px;
+				h3{ font-size: 45px; }
+			} 
+
+			@media #{$lg} {
+				margin-bottom: 0;
+				h3{ font-size: 50px; }
+			} 
+
+			@media #{$xlg} {
+				h3{ font-size: 55px; }
+			} 
+
+			span{
+				@include colors(yellow);
+			}
+
+			p{
+				@include colors(dark3);
+			}
+		}
+	}
+}

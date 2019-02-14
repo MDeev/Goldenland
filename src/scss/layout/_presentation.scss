@@ -1,0 +1,48 @@
+.presentation{
+	@include colors(null, white);
+	.presentation-content{
+		@extend %default-p;
+		@extend %skew-lt;
+		@include colors(null, yellow);
+
+		.video{
+			@extend %default-c;
+			text-align: center;
+
+			@media #{$sm} {
+				padding-right: 10px;
+				padding-left: 10px;
+				h3{ font-size: 30px; }
+				span{ font-size: 14px; }
+			} 
+
+			@media #{$md} {
+				padding-right: 50px;
+				padding-left: 50px;
+
+				h3{ font-size: 40px; }
+				span{ font-size: 16px; }
+			} 
+
+			@media #{$lg} {
+				padding-right: 90px;
+				padding-left: 90px;
+				margin-bottom: 40px;
+
+				h3{ font-size: 55px; }
+				span{ font-size: 18px; }
+			} 
+
+			h3{
+				@include colors(white);
+			}
+			span{
+				@include colors(dark2);
+			}
+			video{
+				@include colors(null, dark1);
+			}
+		}
+
+	}
+}

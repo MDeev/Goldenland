@@ -1,0 +1,34 @@
+.about-us{
+	@include colors(null, yellow);
+
+	.about-content{
+		@extend %default-p;
+		@extend %skew-lt;
+		@include colors(null, white);
+
+		.about{
+			@extend %default-c;
+			@include pl(10);
+
+
+			@media #{$sm} { margin-bottom: 20px; } 
+
+			@media #{$md} { margin-bottom: 20px; } 
+
+			@media #{$xlg} { margin-bottom: 0; }
+
+			span{
+				@include colors(yellow);
+			}
+
+			p{
+				@include colors(dark3);
+			}
+		}
+
+		img{
+			border-radius: 5px;
+			@include shadow;
+		}
+	}
+}
